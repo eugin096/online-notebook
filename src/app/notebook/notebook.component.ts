@@ -34,6 +34,7 @@ export class NotebookComponent implements OnInit {
   }
 
   setActiveTab(tabNumber: number) {
+    this.text = '';
     this.activeTab = tabNumber;
   }
 }
