@@ -1,0 +1,23 @@
+<div class="container mt-5 d-flex flex-column flex-gap">
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item" *ngFor="let page of [1, 2, 3, 4, 5];let i = index">
+            <a class="nav-link" aria-current="page" [class.active]="activeTab === i + 1" (click)="setActiveTab(i + 1);goToPage(page)">Page {{page}}</a>
+        </li>
+    </ul>
+    <div class="form-floating">
+        <textarea autofocus="" [(ngModel)]="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>  
+    <div class="float-end">
+        <button (click)="saveNote()" type="button" class="btn btn-primary">Add Notes</button>
+    </div>
+    <div *ngIf="notes.length" class="d-flex flex-column flex-gap">
+        <div class="card container" *ngFor="let note of notes">
+            <div class="card-body">
+                {{note}}
+            </div>
+        </div>
+    </div>
+  </div>
+
+  
